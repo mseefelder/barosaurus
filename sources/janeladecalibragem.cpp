@@ -19,3 +19,8 @@ JaneladeCalibragem::~JaneladeCalibragem()
 
 
 
+
+void JaneladeCalibragem::on_heightSlider_valueChanged(int value)
+{
+    ui->spinBox->setValue(double(value));
+}
