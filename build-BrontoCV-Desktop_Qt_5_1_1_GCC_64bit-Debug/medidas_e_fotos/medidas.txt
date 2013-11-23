@@ -1,0 +1,30 @@
+altura do pedaço de objeto medido:
+~113,8 +ou- 0,6 cm (sim, era bem chato medir isso)
+
+medida_1:
+distância 139+139+1,5 cm
+Linha inferior: 420 Linha superior: 170
+
+medida_2:
+distância 139+139+1,5+40 cm
+Linha inferior: 395 Linha superior: 174
+
+medida_3:
+distância 139+139+1,5+40+40 cm
+Linha inferior: 375 Linha superior: 177
+
+medida_4:
+distância 139+139+1,5+40+40+40 cm
+Linha inferior: 360 Linha superior: 179
+
+medida_5:
+distância 139+139+1,5+40+40+40+40 cm
+Linha inferior: 346 Linha superior: 181
+
+medida_descartada:
+distância 139+139+1,5+40+40+20 cm
+Linha inferior: 367 Linha superior: 178
+
+eu:
+Linha inferior: 369 Linha superior: 62
+adivinhe minha altura! muahahaha
