@@ -14,14 +14,6 @@ JaneladeCalibragem::~JaneladeCalibragem()
 }
 
 
-
-
-
-
-
-
-
-
 void JaneladeCalibragem::on_heightSlider_valueChanged(int value)
 {
     ui->heightBox->setValue(double(value));
@@ -29,7 +21,7 @@ void JaneladeCalibragem::on_heightSlider_valueChanged(int value)
 
 void JaneladeCalibragem::on_heightBox_valueChanged(double arg1)
 {
-    ui->heightBox->setValue(int(arg1));
+    ui->heightSlider->setValue(int(arg1));
 }
 
 void JaneladeCalibragem::on_horizontalSlider_1_valueChanged(int value)
@@ -51,6 +43,7 @@ void JaneladeCalibragem::on_spinBox_2_valueChanged(double arg1)
 {
     ui->horizontalSlider_2->setValue(int(arg1));
 }
+
 
 void JaneladeCalibragem::on_horizontalSlider_3_valueChanged(int value)
 {

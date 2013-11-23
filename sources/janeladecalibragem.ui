@@ -210,8 +210,11 @@ conhecida a 5 diferentes distâncias da câmera:
       </item>
       <item>
        <widget class="QSlider" name="horizontalSlider_3">
-        <property name="maximum">
+        <property name="minimum">
          <number>100</number>
+        </property>
+        <property name="maximum">
+         <number>1000</number>
         </property>
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -220,8 +223,11 @@ conhecida a 5 diferentes distâncias da câmera:
       </item>
       <item>
        <widget class="QSlider" name="horizontalSlider_4">
-        <property name="maximum">
+        <property name="minimum">
          <number>100</number>
+        </property>
+        <property name="maximum">
+         <number>1000</number>
         </property>
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -230,8 +236,11 @@ conhecida a 5 diferentes distâncias da câmera:
       </item>
       <item>
        <widget class="QSlider" name="horizontalSlider_5">
-        <property name="maximum">
+        <property name="minimum">
          <number>100</number>
+        </property>
+        <property name="maximum">
+         <number>1000</number>
         </property>
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
