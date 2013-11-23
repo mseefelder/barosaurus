@@ -19,3 +19,13 @@ JaneladeCalibragem::~JaneladeCalibragem()
 
 
 
+
+void JaneladeCalibragem::on_heightSlider_valueChanged(int value)
+{
+    ui ->heightBox->setValue(double(value));
+}
+
+void JaneladeCalibragem::on_heightBox_valueChanged(double arg1)
+{
+    ui->heightSlider->setValue(int(arg1));
+}

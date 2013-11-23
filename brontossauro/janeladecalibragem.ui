@@ -126,7 +126,7 @@ conhecida a 5 diferentes distâncias da câmera:
          </font>
         </property>
         <property name="text">
-         <string>Altura do objeto : </string>
+         <string>Altura do objeto</string>
         </property>
        </widget>
       </item>
@@ -170,7 +170,20 @@ conhecida a 5 diferentes distâncias da câmera:
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
-       <widget class="QSlider" name="horizontalSlider">
+       <widget class="QSlider" name="heightSlider">
+        <property name="maximum">
+         <number>1000</number>
+        </property>
+        <property name="singleStep">
+         <number>10</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSlider" name="horizontalSlider_1">
         <property name="maximum">
          <number>1000</number>
         </property>
@@ -184,6 +197,19 @@ conhecida a 5 diferentes distâncias da câmera:
       </item>
       <item>
        <widget class="QSlider" name="horizontalSlider_2">
+        <property name="maximum">
+         <number>1000</number>
+        </property>
+        <property name="singleStep">
+         <number>10</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSlider" name="horizontalSlider_3">
         <property name="maximum">
          <number>1000</number>
         </property>
@@ -221,75 +247,49 @@ conhecida a 5 diferentes distâncias da câmera:
         </property>
        </widget>
       </item>
-      <item>
-       <widget class="QSlider" name="horizontalSlider_6">
-        <property name="maximum">
-         <number>1000</number>
-        </property>
-        <property name="singleStep">
-         <number>10</number>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QSlider" name="horizontalSlider_3">
-        <property name="maximum">
-         <number>1000</number>
-        </property>
-        <property name="singleStep">
-         <number>10</number>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
-      </item>
      </layout>
     </item>
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="QSpinBox" name="spinBox">
+       <widget class="QDoubleSpinBox" name="heightBox">
         <property name="maximum">
-         <number>1000</number>
+         <double>1000.899999999999977</double>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QSpinBox" name="spinBox_2">
+       <widget class="QDoubleSpinBox" name="doubleSpinBox_1">
         <property name="maximum">
-         <number>1000</number>
+         <double>1000.899999999999977</double>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QSpinBox" name="spinBox_3">
+       <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
         <property name="maximum">
-         <number>1000</number>
+         <double>1000.899999999999977</double>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QSpinBox" name="spinBox_4">
+       <widget class="QDoubleSpinBox" name="doubleSpinBox_3">
         <property name="maximum">
-         <number>1000</number>
+         <double>1000.899999999999977</double>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QSpinBox" name="spinBox_5">
+       <widget class="QDoubleSpinBox" name="doubleSpinBox_4">
         <property name="maximum">
-         <number>1000</number>
+         <double>1000.899999999999977</double>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QSpinBox" name="spinBox_6">
+       <widget class="QDoubleSpinBox" name="doubleSpinBox_5">
         <property name="maximum">
-         <number>1000</number>
+         <double>1000.899999999999977</double>
         </property>
        </widget>
       </item>

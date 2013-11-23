@@ -13,12 +13,12 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QDoubleSpinBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSlider>
-#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -47,19 +47,19 @@ public:
     QLabel *label_16;
     QLabel *label_15;
     QVBoxLayout *verticalLayout_3;
-    QSlider *horizontalSlider;
+    QSlider *heightSlider;
+    QSlider *horizontalSlider_1;
     QSlider *horizontalSlider_2;
+    QSlider *horizontalSlider_3;
     QSlider *horizontalSlider_4;
     QSlider *horizontalSlider_5;
-    QSlider *horizontalSlider_6;
-    QSlider *horizontalSlider_3;
     QVBoxLayout *verticalLayout_2;
-    QSpinBox *spinBox;
-    QSpinBox *spinBox_2;
-    QSpinBox *spinBox_3;
-    QSpinBox *spinBox_4;
-    QSpinBox *spinBox_5;
-    QSpinBox *spinBox_6;
+    QDoubleSpinBox *heightBox;
+    QDoubleSpinBox *doubleSpinBox_1;
+    QDoubleSpinBox *doubleSpinBox_2;
+    QDoubleSpinBox *doubleSpinBox_3;
+    QDoubleSpinBox *doubleSpinBox_4;
+    QDoubleSpinBox *doubleSpinBox_5;
     QVBoxLayout *verticalLayout;
     QLabel *label_2;
     QLabel *label_5;
@@ -162,13 +162,21 @@ public:
 
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
-        horizontalSlider = new QSlider(layoutWidget1);
-        horizontalSlider->setObjectName(QStringLiteral("horizontalSlider"));
-        horizontalSlider->setMaximum(1000);
-        horizontalSlider->setSingleStep(10);
-        horizontalSlider->setOrientation(Qt::Horizontal);
+        heightSlider = new QSlider(layoutWidget1);
+        heightSlider->setObjectName(QStringLiteral("heightSlider"));
+        heightSlider->setMaximum(1000);
+        heightSlider->setSingleStep(10);
+        heightSlider->setOrientation(Qt::Horizontal);
 
-        verticalLayout_3->addWidget(horizontalSlider);
+        verticalLayout_3->addWidget(heightSlider);
+
+        horizontalSlider_1 = new QSlider(layoutWidget1);
+        horizontalSlider_1->setObjectName(QStringLiteral("horizontalSlider_1"));
+        horizontalSlider_1->setMaximum(1000);
+        horizontalSlider_1->setSingleStep(10);
+        horizontalSlider_1->setOrientation(Qt::Horizontal);
+
+        verticalLayout_3->addWidget(horizontalSlider_1);
 
         horizontalSlider_2 = new QSlider(layoutWidget1);
         horizontalSlider_2->setObjectName(QStringLiteral("horizontalSlider_2"));
@@ -177,6 +185,14 @@ public:
         horizontalSlider_2->setOrientation(Qt::Horizontal);
 
         verticalLayout_3->addWidget(horizontalSlider_2);
+
+        horizontalSlider_3 = new QSlider(layoutWidget1);
+        horizontalSlider_3->setObjectName(QStringLiteral("horizontalSlider_3"));
+        horizontalSlider_3->setMaximum(1000);
+        horizontalSlider_3->setSingleStep(10);
+        horizontalSlider_3->setOrientation(Qt::Horizontal);
+
+        verticalLayout_3->addWidget(horizontalSlider_3);
 
         horizontalSlider_4 = new QSlider(layoutWidget1);
         horizontalSlider_4->setObjectName(QStringLiteral("horizontalSlider_4"));
@@ -194,62 +210,46 @@ public:
 
         verticalLayout_3->addWidget(horizontalSlider_5);
 
-        horizontalSlider_6 = new QSlider(layoutWidget1);
-        horizontalSlider_6->setObjectName(QStringLiteral("horizontalSlider_6"));
-        horizontalSlider_6->setMaximum(1000);
-        horizontalSlider_6->setSingleStep(10);
-        horizontalSlider_6->setOrientation(Qt::Horizontal);
-
-        verticalLayout_3->addWidget(horizontalSlider_6);
-
-        horizontalSlider_3 = new QSlider(layoutWidget1);
-        horizontalSlider_3->setObjectName(QStringLiteral("horizontalSlider_3"));
-        horizontalSlider_3->setMaximum(1000);
-        horizontalSlider_3->setSingleStep(10);
-        horizontalSlider_3->setOrientation(Qt::Horizontal);
-
-        verticalLayout_3->addWidget(horizontalSlider_3);
-
 
         horizontalLayout->addLayout(verticalLayout_3);
 
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        spinBox = new QSpinBox(layoutWidget1);
-        spinBox->setObjectName(QStringLiteral("spinBox"));
-        spinBox->setMaximum(1000);
+        heightBox = new QDoubleSpinBox(layoutWidget1);
+        heightBox->setObjectName(QStringLiteral("heightBox"));
+        heightBox->setMaximum(1000.9);
 
-        verticalLayout_2->addWidget(spinBox);
+        verticalLayout_2->addWidget(heightBox);
 
-        spinBox_2 = new QSpinBox(layoutWidget1);
-        spinBox_2->setObjectName(QStringLiteral("spinBox_2"));
-        spinBox_2->setMaximum(1000);
+        doubleSpinBox_1 = new QDoubleSpinBox(layoutWidget1);
+        doubleSpinBox_1->setObjectName(QStringLiteral("doubleSpinBox_1"));
+        doubleSpinBox_1->setMaximum(1000.9);
 
-        verticalLayout_2->addWidget(spinBox_2);
+        verticalLayout_2->addWidget(doubleSpinBox_1);
 
-        spinBox_3 = new QSpinBox(layoutWidget1);
-        spinBox_3->setObjectName(QStringLiteral("spinBox_3"));
-        spinBox_3->setMaximum(1000);
+        doubleSpinBox_2 = new QDoubleSpinBox(layoutWidget1);
+        doubleSpinBox_2->setObjectName(QStringLiteral("doubleSpinBox_2"));
+        doubleSpinBox_2->setMaximum(1000.9);
 
-        verticalLayout_2->addWidget(spinBox_3);
+        verticalLayout_2->addWidget(doubleSpinBox_2);
 
-        spinBox_4 = new QSpinBox(layoutWidget1);
-        spinBox_4->setObjectName(QStringLiteral("spinBox_4"));
-        spinBox_4->setMaximum(1000);
+        doubleSpinBox_3 = new QDoubleSpinBox(layoutWidget1);
+        doubleSpinBox_3->setObjectName(QStringLiteral("doubleSpinBox_3"));
+        doubleSpinBox_3->setMaximum(1000.9);
 
-        verticalLayout_2->addWidget(spinBox_4);
+        verticalLayout_2->addWidget(doubleSpinBox_3);
 
-        spinBox_5 = new QSpinBox(layoutWidget1);
-        spinBox_5->setObjectName(QStringLiteral("spinBox_5"));
-        spinBox_5->setMaximum(1000);
+        doubleSpinBox_4 = new QDoubleSpinBox(layoutWidget1);
+        doubleSpinBox_4->setObjectName(QStringLiteral("doubleSpinBox_4"));
+        doubleSpinBox_4->setMaximum(1000.9);
 
-        verticalLayout_2->addWidget(spinBox_5);
+        verticalLayout_2->addWidget(doubleSpinBox_4);
 
-        spinBox_6 = new QSpinBox(layoutWidget1);
-        spinBox_6->setObjectName(QStringLiteral("spinBox_6"));
-        spinBox_6->setMaximum(1000);
+        doubleSpinBox_5 = new QDoubleSpinBox(layoutWidget1);
+        doubleSpinBox_5->setObjectName(QStringLiteral("doubleSpinBox_5"));
+        doubleSpinBox_5->setMaximum(1000.9);
 
-        verticalLayout_2->addWidget(spinBox_6);
+        verticalLayout_2->addWidget(doubleSpinBox_5);
 
 
         horizontalLayout->addLayout(verticalLayout_2);
@@ -313,7 +313,7 @@ public:
         pushButton_5->setText(QApplication::translate("JaneladeCalibragem", "Foto 3", 0));
         pushButton_4->setText(QApplication::translate("JaneladeCalibragem", "Foto 4", 0));
         pushButton_6->setText(QApplication::translate("JaneladeCalibragem", "Foto 5", 0));
-        label->setText(QApplication::translate("JaneladeCalibragem", "Altura do objeto : ", 0));
+        label->setText(QApplication::translate("JaneladeCalibragem", "Altura do objeto", 0));
         label_4->setText(QApplication::translate("JaneladeCalibragem", "Dist\303\242ncia :", 0));
         label_10->setText(QApplication::translate("JaneladeCalibragem", "Dist\303\242ncia :", 0));
         label_13->setText(QApplication::translate("JaneladeCalibragem", "Dist\303\242ncia :", 0));
