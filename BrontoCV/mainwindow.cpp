@@ -179,19 +179,19 @@ void lineMarker(){
 
 void MainWindow::on_btnCamera_clicked()
 {
-//    namedWindow("Disp");
-//    Mat frame;
+    namedWindow("Disp");
+    Mat frame;
 
-//    do{
-//        cap >> frame;
-//        imshow("Disp",frame);
-//    }while(cv::waitKey(10)<0);
+    do{
+        cap >> frame;
+        imshow("Disp",frame);
+    }while(cv::waitKey(10)<0);
 
-//    cap >> frame;
+    cap >> frame;
 
-//    imwrite(draft, frame); //saves image on disk
+    imwrite(draft, frame); //saves image on disk
 
-//    destroyWindow("Disp");
+    destroyWindow("Disp");
 
     lineMarker();
 }
