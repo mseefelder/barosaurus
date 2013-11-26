@@ -95,3 +95,8 @@ void JaneladeCalibragem::on_spinBox_5_valueChanged(double arg1)
     ui->horizontalSlider_5->setValue(int(arg1));
     calibSet.fset[4].setDistance(arg1);
 }
+
+void JaneladeCalibragem::on_pushButton_2_clicked()
+{
+    
+}

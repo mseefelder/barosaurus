@@ -15,14 +15,19 @@ aLine::aLine(){p1.x=0;p2.x=0;p1.y=0;p2.y=0;} //default constructor
         line(image, p1, p2, color);
     }
 
+//--------------------------------------------------------------------
+
     lineSet::lineSet(){
         aLine line0;
         set[0] = line0;
         set[1] = line0;
+        hasDistance=false;
     }
+
     void lineSet::setDistance(double dist)
     {
         dc = dist;
+        hasDistance = true;
     }
 
     void lineSet::setLine(int index, aLine myLine){
@@ -33,12 +38,16 @@ aLine::aLine(){p1.x=0;p2.x=0;p1.y=0;p2.y=0;} //default constructor
     }
 
     bool lineSet::hasBottom(){return bottom;}
+
     bool lineSet::hasTop(){return top;}
+
+//--------------------------------------------------------------------
 
     fiveLineSets::fiveLineSets(){
         lineSet lineSetZero;
+        objectHeight = 0.0;
         for (int i; i<5; i++){fset[i] = lineSetZero;}
-        one = false; two = false; three = false; four = false; five = false;
+        hasObHeight=false; one = false; two = false; three = false; four = false; five = false;
     }
 
     double fiveLineSets::listDistances()
@@ -48,7 +57,6 @@ aLine::aLine(){p1.x=0;p2.x=0;p1.y=0;p2.y=0;} //default constructor
             distanceList[i]=fset[i].dc;
         }
     }
-
 
     double fiveLineSets::listLinesHeight()
     {
@@ -65,7 +73,7 @@ aLine::aLine(){p1.x=0;p2.x=0;p1.y=0;p2.y=0;} //default constructor
         }
     }
 
-        void fiveLineSets::setSet(int index, lineSet mySet){
+    void fiveLineSets::setSet(int index, lineSet mySet){
         if (index>4){cout<<"Index out of range;";}
         fset[index] = mySet;
         switch(index){
@@ -77,10 +85,21 @@ aLine::aLine(){p1.x=0;p2.x=0;p1.y=0;p2.y=0;} //default constructor
         }
     }
 
-    bool fiveLineSets::isFull(){
-        return one && two && three && four && five;
+    void fiveLineSets::setObjectHeight(float obHeight){
+        objectHeight = obHeight;
+        hasObHeight = true;
     }
 
+    bool fiveLineSets::isFull(){
+        return one && two && three && four && five && hasObHeight &&
+                fset[0].hasDistance &&
+                fset[1].hasDistance &&
+                fset[2].hasDistance &&
+                fset[3].hasDistance &&
+                fset[4].hasDistance;
+    }
+
+//--------------------------------------------------------------------
 
 Camera::Camera ()
 {
@@ -90,7 +109,6 @@ Camera::Camera ()
     m_hb = 0;
 }
 
-
 void Camera::set_Distances_CameraVsObject(double ex_realDist[])
 {
     for (int i = 0; i < calibration_range; i++)
@@ -99,8 +117,8 @@ void Camera::set_Distances_CameraVsObject(double ex_realDist[])
     }
                                 //debug
 }
-void Camera::calculate_VerticalParameters(double *maxh,
-                                          double *minh)
+
+void Camera::calculate_VerticalParameters(double *maxh, double *minh)
 // This is a linear fit
 // y = a*x + b
 {

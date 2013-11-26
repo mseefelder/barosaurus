@@ -56,24 +56,26 @@ struct lineSet{
     double dc;
     bool bottom;
     bool top;
+    bool hasDistance;
 
     lineSet();
     void setDistance(double dist);
     void setLine(int index, aLine myLine);
     bool hasBottom();
     bool hasTop();
-
 };
 
 struct fiveLineSets{
     lineSet fset[5];
+    float objectHeight;
     double distanceList[5], bottonHeight[5], topHeight[5];
-    bool one, two, three, four, five;
+    bool one, two, three, four, five, hasObHeight;
 
     fiveLineSets();
     double listDistances();
     double listLinesHeight();
     void setSet(int index, lineSet mySet);
+    void setObjectHeight (float obHeight);
     bool isFull();
 };
 
