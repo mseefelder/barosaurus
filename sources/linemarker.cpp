@@ -1,4 +1,23 @@
 #include "linemarker.h"
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+#include "janeladecalibragem.h"
+#include <QWidget>
+#include <cv.h>
+#include <highgui.h>
+#include "camera.h"
+
+//to be used during measuring
+lineSet markedLines;
+
+//Line marking window name
+string lineMarkerName = "Line marker";
+
+Mat img, workingImage;
+string draft = "draft.jpg";
+
+//While the program is running, the webcam is always on
+cv::VideoCapture cap(0);
 
 LineMarker::LineMarker()
 {
@@ -41,7 +60,7 @@ void onMouse(int event, int x, int y, int flags, void* userdata)
     }
 }
 
-void markLines(){
+lineSet LineMarker::markLines(){
 
     //Clean markedLines
     lineSet zeroSet;
@@ -70,5 +89,24 @@ void markLines(){
     waitKey(0);
     //Vai chamar o método de cálculo com markedLines como parâmetro
     cout<<"Linha inferior: "<<markedLines.set[0].p1.y<<" Linha superior: "<<markedLines.set[1].p1.y<<endl;
+    return markedLines; // this index will be used to save different lineSets on the fiveLineSets calibration variable
     destroyWindow(lineMarkerName);
+}
+
+lineSet LineMarker::displayCamera(){
+    namedWindow("Disp");
+    Mat frame;
+
+    do{
+        cap >> frame;
+        imshow("Disp",frame);
+    }while(cv::waitKey(10)<0);
+
+    cap >> frame;
+
+    imwrite(draft, frame); //saves image on disk
+
+    destroyWindow("Disp");
+
+    return markLines();
 }

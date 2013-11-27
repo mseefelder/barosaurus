@@ -1,13 +1,17 @@
 #include "janeladecalibragem.h"
 #include "ui_janeladecalibragem.h"
+#include "measuringwindow.h"
 #include <cv.h>
 #include <highgui.h>
 #include "camera.h"
+#include <QMessageBox>
+#include "linemarker.h"
 
 using namespace std;
 using namespace cv;
 
 fiveLineSets calibSet;
+LineMarker linemarker;
 
 JaneladeCalibragem::JaneladeCalibragem(QWidget *parent) :
     QWidget(parent),
@@ -94,4 +98,48 @@ void JaneladeCalibragem::on_spinBox_5_valueChanged(double arg1)
 {
     ui->horizontalSlider_5->setValue(int(arg1));
     calibSet.fset[4].setDistance(arg1);
+}
+
+void JaneladeCalibragem::on_pushButton_2_clicked()
+{
+    lineSet temporary = linemarker.displayCamera();
+    calibSet.setSet(0, temporary);
+}
+
+void JaneladeCalibragem::on_pushButton_3_clicked()
+{
+    lineSet temporary = linemarker.displayCamera();
+    calibSet.setSet(1, temporary);
+}
+
+void JaneladeCalibragem::on_pushButton_5_clicked()
+{
+    lineSet temporary = linemarker.displayCamera();
+    calibSet.setSet(2, temporary);
+}
+
+void JaneladeCalibragem::on_pushButton_4_clicked()
+{
+    lineSet temporary = linemarker.displayCamera();
+    calibSet.setSet(3, temporary);
+}
+
+void JaneladeCalibragem::on_pushButton_6_clicked()
+{
+    lineSet temporary = linemarker.displayCamera();
+    calibSet.setSet(4, temporary);
+}
+
+void JaneladeCalibragem::on_pushButton_clicked()
+{
+    if(calibSet.isFull()){
+        MeasuringWindow  *measuringwindow= new MeasuringWindow;
+        measuringwindow->show();
+        this->close();
+    }
+    else if(!calibSet.isFull()){
+        QMessageBox msgBox;
+        msgBox.setText("You didn't take all the pictures, set all the values!");
+        msgBox.exec();
+    }
 }

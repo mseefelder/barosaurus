@@ -17,6 +17,7 @@ public:
     ~MainWindow();
     QGraphicsScene* scn;
     QPixmap img;
+    int count_cameras();
 private slots:
     void on_pushButton_2_clicked();
 

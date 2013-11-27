@@ -11,20 +11,20 @@ using namespace cv;
 
 //------Globals-----
 
-//to be used during measuring
-lineSet markedLines;
+////to be used during measuring
+//lineSet markedLines;
 
-//group of lineSets used for calibration
-fiveLineSets calib;
+////group of lineSets used for calibration
+//fiveLineSets calib;
 
-//Line marking window name
-string lineMarkerName = "Line marker";
+////Line marking window name
+//string lineMarkerName = "Line marker";
 
-Mat img, workingImage;
-string draft = "draft.jpg";
+//Mat img, workingImage;
+//string draft = "draft.jpg";
 
-//While the program is running, the webcam is always on
-cv::VideoCapture cap(0);
+////While the program is running, the webcam is always on
+//cv::VideoCapture cap(0);
 
 //--------------------
 
