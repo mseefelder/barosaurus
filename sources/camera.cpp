@@ -1,5 +1,7 @@
 #include "camera.h"
 
+//----- aLine ---------------------------------------------------------------
+// Data structure to store a line information
 aLine::aLine(){p1.x=0;p2.x=0;p1.y=0;p2.y=0;} //default constructor
 
     //constructor declaring points
@@ -15,8 +17,8 @@ aLine::aLine(){p1.x=0;p2.x=0;p1.y=0;p2.y=0;} //default constructor
         line(image, p1, p2, color);
     }
 
-//--------------------------------------------------------------------
-
+//----- lineSet ---------------------------------------------------------------
+//A pair of lines, top and bottom, with a defined distance from the camera
     lineSet::lineSet(){
         aLine line0;
         set[0] = line0;
@@ -41,8 +43,8 @@ aLine::aLine(){p1.x=0;p2.x=0;p1.y=0;p2.y=0;} //default constructor
 
     bool lineSet::hasTop(){return top;}
 
-//--------------------------------------------------------------------
-
+//----- fiveLineSets ---------------------------------------------------------------
+//Five lineSets together with extra data for calibration purpose (calibration object height)
     fiveLineSets::fiveLineSets(){
         lineSet lineSetZero;
         objectHeight = 0.0;
@@ -99,8 +101,8 @@ aLine::aLine(){p1.x=0;p2.x=0;p1.y=0;p2.y=0;} //default constructor
                 fset[4].hasDistance;
     }
 
-//--------------------------------------------------------------------
-
+//----- Camera ---------------------------------------------------------------
+//Camera class for the calibration and measuring calculus
 Camera::Camera ()
 {
     m_va = 0;

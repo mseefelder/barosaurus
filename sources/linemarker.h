@@ -9,7 +9,8 @@ class LineMarker
 public:
     LineMarker();
     lineSet markLines();
-    lineSet displayCamera();
+    lineSet displayCamera(string windowName);
+    void chooseLine(bool top);
 };
 
 #endif // LINEMARKER_H

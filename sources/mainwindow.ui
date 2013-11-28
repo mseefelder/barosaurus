@@ -40,14 +40,17 @@
      <item>
       <widget class="QPushButton" name="pushButton_2">
        <property name="text">
-        <string>Calibrar Câmera</string>
+        <string>Calibrate Camera</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="pushButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="text">
-        <string>Carregar Calibragem</string>
+        <string>Set Camera</string>
        </property>
       </widget>
      </item>

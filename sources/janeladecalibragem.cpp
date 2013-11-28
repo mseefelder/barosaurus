@@ -6,6 +6,7 @@
 #include "camera.h"
 #include <QMessageBox>
 #include "linemarker.h"
+#include "linemarkercontrols.h"
 
 using namespace std;
 using namespace cv;
@@ -25,7 +26,7 @@ JaneladeCalibragem::~JaneladeCalibragem()
     delete ui;
 }
 
-
+//-----------VALUE INPUTS----------------------------------------------------------
 void JaneladeCalibragem::on_heightSlider_valueChanged(int value)
 {
     ui->heightBox->setValue(double(value));
@@ -63,7 +64,6 @@ void JaneladeCalibragem::on_spinBox_2_valueChanged(double arg1)
     calibSet.fset[1].setDistance(arg1);
 }
 
-
 void JaneladeCalibragem::on_horizontalSlider_3_valueChanged(int value)
 {
     ui->spinBox_3->setValue(double(value));
@@ -100,36 +100,42 @@ void JaneladeCalibragem::on_spinBox_5_valueChanged(double arg1)
     calibSet.fset[4].setDistance(arg1);
 }
 
+
+//-----------CALIBRATION PHOTOS----------------------------------------------------------
 void JaneladeCalibragem::on_pushButton_2_clicked()
 {
-    lineSet temporary = linemarker.displayCamera();
+    lineMarkerControls  *controlBox= new lineMarkerControls;
+    controlBox->setTarget(&linemarker);
+    controlBox->show();
+    lineSet temporary = linemarker.displayCamera("Calibration photo 1");
     calibSet.setSet(0, temporary);
 }
 
 void JaneladeCalibragem::on_pushButton_3_clicked()
 {
-    lineSet temporary = linemarker.displayCamera();
+    lineSet temporary = linemarker.displayCamera("Calibration photo 2");
     calibSet.setSet(1, temporary);
 }
 
 void JaneladeCalibragem::on_pushButton_5_clicked()
 {
-    lineSet temporary = linemarker.displayCamera();
+    lineSet temporary = linemarker.displayCamera("Calibration photo 3");
     calibSet.setSet(2, temporary);
 }
 
 void JaneladeCalibragem::on_pushButton_4_clicked()
 {
-    lineSet temporary = linemarker.displayCamera();
+    lineSet temporary = linemarker.displayCamera("Calibration photo 4");
     calibSet.setSet(3, temporary);
 }
 
 void JaneladeCalibragem::on_pushButton_6_clicked()
 {
-    lineSet temporary = linemarker.displayCamera();
+    lineSet temporary = linemarker.displayCamera("Calibration photo 5");
     calibSet.setSet(4, temporary);
 }
 
+//-----------END OF CALIBRATION PROCESS----------------------------------------------------------
 void JaneladeCalibragem::on_pushButton_clicked()
 {
     if(calibSet.isFull()){

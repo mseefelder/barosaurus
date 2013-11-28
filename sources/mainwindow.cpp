@@ -9,7 +9,8 @@
 using namespace std;
 using namespace cv;
 
-//------Globals-----
+/*
+//------Globals-----NOT BEING USED
 
 ////to be used during measuring
 //lineSet markedLines;
@@ -27,6 +28,7 @@ using namespace cv;
 //cv::VideoCapture cap(0);
 
 //--------------------
+*/
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -34,7 +36,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
    scn = new QGraphicsScene;
-   QString filename = "/home/vinicius/brontossauro/brontossauro3.jpg";
+   QString filename = "brontossauro3.jpg";
    img.load(filename);
    scn->addPixmap(img);
    ui->graphicsView->setScene(scn);
@@ -45,6 +47,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+//Open calibration window
 void MainWindow::on_pushButton_2_clicked()
 {
     JaneladeCalibragem  *janeladecalibragem= new JaneladeCalibragem;

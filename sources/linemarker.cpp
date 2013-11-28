@@ -19,20 +19,44 @@ string draft = "draft.jpg";
 //While the program is running, the webcam is always on
 cv::VideoCapture cap(0);
 
+//Bool to control what line the user is marking: false=bottom, true=top
+bool wichLine = false;
+
 LineMarker::LineMarker()
 {
 }
 
+void LineMarker::chooseLine(bool top){
+    wichLine = top;
+}
+
+//Mouse callback event to mark the lines
 void onMouse(int event, int x, int y, int flags, void* userdata)
 {
     if  ( event == EVENT_LBUTTONDOWN )
     {
+        /*
         //sets upper line
         img = imread(draft);
         aLine templine(0, y, img.size().width, y);
         templine.drawaLine(img, Scalar(0, 0, 255));
         imshow(lineMarkerName, img);
         markedLines.setLine(1,templine);
+        */
+        if(wichLine){
+            img = imread(draft);
+            aLine templine(0, y, img.size().width, y);
+            templine.drawaLine(img, Scalar(0, 0, 255));
+            imshow(lineMarkerName, img);
+            markedLines.setLine(1,templine);
+        }
+        else if(!wichLine){
+            img = imread(draft);
+            aLine templine(0, y, img.size().width, y);
+            templine.drawaLine(img, Scalar(0, 0, 255));
+            imshow(lineMarkerName, img);
+            markedLines.setLine(0,templine);
+        }
     }
     else if  ( event == EVENT_RBUTTONDOWN )
     {
@@ -60,6 +84,7 @@ void onMouse(int event, int x, int y, int flags, void* userdata)
     }
 }
 
+//Line marking function. User defines a top and a bottom line with the mouse
 lineSet LineMarker::markLines(){
 
     //Clean markedLines
@@ -87,26 +112,28 @@ lineSet LineMarker::markLines(){
 
     // Wait until user press some key
     waitKey(0);
-    //Vai chamar o método de cálculo com markedLines como parâmetro
-    cout<<"Linha inferior: "<<markedLines.set[0].p1.y<<" Linha superior: "<<markedLines.set[1].p1.y<<endl;
-    return markedLines; // this index will be used to save different lineSets on the fiveLineSets calibration variable
+
+    cout<<"Top line: "<<markedLines.set[0].p1.y<<" Bottom line: "<<markedLines.set[1].p1.y<<endl; //debug purpose only
     destroyWindow(lineMarkerName);
+    return markedLines; // this index will be used to save different lineSets on the fiveLineSets calibration variable
+
 }
 
-lineSet LineMarker::displayCamera(){
-    namedWindow("Disp");
+//Open camera to take picture by pressing any key. Picture is used for line marking
+lineSet LineMarker::displayCamera(string windowName){
+    namedWindow(windowName);
     Mat frame;
 
     do{
         cap >> frame;
-        imshow("Disp",frame);
+        imshow(windowName,frame);
     }while(cv::waitKey(10)<0);
 
     cap >> frame;
 
     imwrite(draft, frame); //saves image on disk
 
-    destroyWindow("Disp");
+    destroyWindow(windowName);
 
     return markLines();
 }

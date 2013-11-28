@@ -36,7 +36,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Fim da Calibragem</string>
+    <string>End of calibration</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
@@ -50,12 +50,12 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>12</pointsize>
+     <pointsize>10</pointsize>
     </font>
    </property>
    <property name="text">
-    <string>Para a calibragem você precisará tirar 5 fotos de um objeto de altura
-conhecida a 5 diferentes distâncias da câmera:
+    <string>For the calibration you will need to take 5 pictures of an object with known height.
+In each picture the object has to be at a different known distance from the camera:
 </string>
    </property>
   </widget>
@@ -72,35 +72,35 @@ conhecida a 5 diferentes distâncias da câmera:
     <item>
      <widget class="QPushButton" name="pushButton_2">
       <property name="text">
-       <string>Foto 1</string>
+       <string>Photo #1</string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QPushButton" name="pushButton_3">
       <property name="text">
-       <string>Foto 2</string>
+       <string>Photo #2</string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QPushButton" name="pushButton_5">
       <property name="text">
-       <string>Foto 3</string>
+       <string>Photo #3</string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QPushButton" name="pushButton_4">
       <property name="text">
-       <string>Foto 4</string>
+       <string>Photo #4</string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QPushButton" name="pushButton_6">
       <property name="text">
-       <string>Foto 5</string>
+       <string>Photo #5</string>
       </property>
      </widget>
     </item>
@@ -126,42 +126,42 @@ conhecida a 5 diferentes distâncias da câmera:
          </font>
         </property>
         <property name="text">
-         <string>Altura do objeto : </string>
+         <string>Object height : </string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QLabel" name="label_4">
         <property name="text">
-         <string>Distância :</string>
+         <string>Distance :</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QLabel" name="label_10">
         <property name="text">
-         <string>Distância :</string>
+         <string>Distance :</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QLabel" name="label_13">
         <property name="text">
-         <string>Distância :</string>
+         <string>Distance :</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QLabel" name="label_16">
         <property name="text">
-         <string>Distância :</string>
+         <string>Distance :</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QLabel" name="label_15">
         <property name="text">
-         <string>Distância :</string>
+         <string>Distance :</string>
         </property>
        </widget>
       </item>
