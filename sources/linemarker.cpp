@@ -76,7 +76,12 @@ void onMouse(int event, int x, int y, int flags, void* userdata)
     else if  ( event == EVENT_MBUTTONDOWN )
     {
         //take another picture
-        destroyWindow(lineMarkerName);
+        //destroyWindow(lineMarkerName);
+        img = imread(draft);
+        aLine templine(0, y, img.size().width, y);
+        templine.drawaLine(img, Scalar(0, 0, 255));
+        imshow(lineMarkerName, img);
+        markedLines.setLine(1,templine);
     }
     else if ( event == EVENT_MOUSEMOVE )
     {

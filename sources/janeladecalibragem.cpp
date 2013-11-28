@@ -154,6 +154,13 @@ void JaneladeCalibragem::on_pushButton_clicked()
         MeasuringWindow  *measuringwindow= new MeasuringWindow;
         measuringwindow->show();
         measuringwindow->setLineMarker(linemarker);
+        Camera thisCamera;
+        calibSet.listLinesHeight();
+        calibSet.listDistances();
+        thisCamera.set_Distances_CameraVsObject(calibSet.distanceList);
+        thisCamera.set_objectHeight(calibSet.objectHeight);
+        thisCamera.calculate_VerticalParameters(calibSet.topHeight, calibSet.bottonHeight);
+        measuringwindow->setCamera(thisCamera);
         this->close();
     }
     else if(!calibSet.isFull()){

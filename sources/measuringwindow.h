@@ -21,9 +21,17 @@ public:
     explicit MeasuringWindow(QWidget *parent = 0);
     ~MeasuringWindow();
     void setLineMarker(LineMarker mytarget);
+    void setCamera(Camera thisCamera);
+
 
 private slots:
     void on_pushButton_clicked();
+
+    void on_horizontalSlider_valueChanged(int value);
+
+    void on_doubleSpinBox_valueChanged(double arg1);
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::MeasuringWindow *ui;
