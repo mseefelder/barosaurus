@@ -11,6 +11,7 @@ public:
     lineSet markLines();
     lineSet displayCamera(string windowName);
     void chooseLine(bool top);
+    void stopMarking();
 };
 
 #endif // LINEMARKER_H

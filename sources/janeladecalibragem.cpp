@@ -104,33 +104,45 @@ void JaneladeCalibragem::on_spinBox_5_valueChanged(double arg1)
 //-----------CALIBRATION PHOTOS----------------------------------------------------------
 void JaneladeCalibragem::on_pushButton_2_clicked()
 {
-    lineMarkerControls  *controlBox= new lineMarkerControls;
-    controlBox->setTarget(&linemarker);
-    controlBox->show();
+    //lineMarkerControls  *controlBox= new lineMarkerControls;
+    //controlBox->setTarget(&linemarker);
+    //controlBox->show();
     lineSet temporary = linemarker.displayCamera("Calibration photo 1");
     calibSet.setSet(0, temporary);
 }
 
 void JaneladeCalibragem::on_pushButton_3_clicked()
 {
+    //lineMarkerControls  *controlBox= new lineMarkerControls;
+    //controlBox->setTarget(&linemarker);
+    //controlBox->show();
     lineSet temporary = linemarker.displayCamera("Calibration photo 2");
     calibSet.setSet(1, temporary);
 }
 
 void JaneladeCalibragem::on_pushButton_5_clicked()
 {
+    //lineMarkerControls  *controlBox= new lineMarkerControls;
+    //controlBox->setTarget(&linemarker);
+    //controlBox->show();
     lineSet temporary = linemarker.displayCamera("Calibration photo 3");
     calibSet.setSet(2, temporary);
 }
 
 void JaneladeCalibragem::on_pushButton_4_clicked()
 {
+    //lineMarkerControls  *controlBox= new lineMarkerControls;
+    //controlBox->setTarget(&linemarker);
+    //controlBox->show();
     lineSet temporary = linemarker.displayCamera("Calibration photo 4");
     calibSet.setSet(3, temporary);
 }
 
 void JaneladeCalibragem::on_pushButton_6_clicked()
 {
+    //lineMarkerControls  *controlBox= new lineMarkerControls;
+    //controlBox->setTarget(&linemarker);
+    //controlBox->show();
     lineSet temporary = linemarker.displayCamera("Calibration photo 5");
     calibSet.setSet(4, temporary);
 }
@@ -141,6 +153,7 @@ void JaneladeCalibragem::on_pushButton_clicked()
     if(calibSet.isFull()){
         MeasuringWindow  *measuringwindow= new MeasuringWindow;
         measuringwindow->show();
+        measuringwindow->setLineMarker(linemarker);
         this->close();
     }
     else if(!calibSet.isFull()){

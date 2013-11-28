@@ -6,6 +6,7 @@
 #include <cv.h>
 #include <highgui.h>
 #include "camera.h"
+#include "linemarkercontrols.h"
 
 //to be used during measuring
 lineSet markedLines;
@@ -19,8 +20,9 @@ string draft = "draft.jpg";
 //While the program is running, the webcam is always on
 cv::VideoCapture cap(0);
 
-//Bool to control what line the user is marking: false=bottom, true=top
-bool wichLine = false;
+//Bools to control if user is still marking lines and what line the user is marking
+bool wichLine = false; //false=bottom, true=top
+bool isMarking = false; //is marking lines?
 
 LineMarker::LineMarker()
 {
@@ -29,6 +31,8 @@ LineMarker::LineMarker()
 void LineMarker::chooseLine(bool top){
     wichLine = top;
 }
+
+void LineMarker::stopMarking(){isMarking=false;}
 
 //Mouse callback event to mark the lines
 void onMouse(int event, int x, int y, int flags, void* userdata)
@@ -43,6 +47,7 @@ void onMouse(int event, int x, int y, int flags, void* userdata)
         imshow(lineMarkerName, img);
         markedLines.setLine(1,templine);
         */
+        if(isMarking){
         if(wichLine){
             img = imread(draft);
             aLine templine(0, y, img.size().width, y);
@@ -57,6 +62,7 @@ void onMouse(int event, int x, int y, int flags, void* userdata)
             imshow(lineMarkerName, img);
             markedLines.setLine(0,templine);
         }
+    }
     }
     else if  ( event == EVENT_RBUTTONDOWN )
     {
@@ -134,6 +140,11 @@ lineSet LineMarker::displayCamera(string windowName){
     imwrite(draft, frame); //saves image on disk
 
     destroyWindow(windowName);
+    isMarking = true;
+
+    lineMarkerControls  *controlBox= new lineMarkerControls;
+    controlBox->setTarget(this);
+    controlBox->show();
 
     return markLines();
 }
