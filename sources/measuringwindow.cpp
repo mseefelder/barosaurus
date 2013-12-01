@@ -7,6 +7,7 @@
 #include "linemarker.h"
 #include "linemarkercontrols.h"
 #include <QString>
+#include <QClipboard>
 
 LineMarker measurelinemarker;
 lineSet workingSet;
@@ -58,5 +59,11 @@ void MeasuringWindow::on_pushButton_2_clicked()
     result = myCamera.calculate_RealHeight(workingSet.dc, workingSet);
     QString resultText = QString::number(result);
     ui->measuredValue->setText(resultText);
+}
+
+void MeasuringWindow::on_pushButton_3_clicked()
+{
+    QString str;
+    QApplication::clipboard()->setText(str.number(result));
 }
 
