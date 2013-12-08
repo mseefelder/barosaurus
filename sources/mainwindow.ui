@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>427</width>
+    <width>402</width>
     <height>365</height>
    </rect>
   </property>
@@ -18,66 +18,65 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>-10</y>
+      <y>-20</y>
       <width>461</width>
-      <height>371</height>
+      <height>381</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true">background-image: url(:/new/prefix1/brontossaurus/brontossauro3.jpg);</string>
     </property>
    </widget>
-   <widget class="QWidget" name="verticalLayoutWidget">
+   <widget class="QSplitter" name="splitter">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>50</y>
-      <width>241</width>
-      <height>201</height>
+      <x>40</x>
+      <y>100</y>
+      <width>341</width>
+      <height>141</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>  Select your camera:</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox">
+     <property name="editable">
+      <bool>false</bool>
+     </property>
+     <property name="currentText">
+      <string>Default Camera</string>
+     </property>
      <item>
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>               Select your camera:</string>
-       </property>
-      </widget>
+      <property name="text">
+       <string>Default Camera</string>
+      </property>
      </item>
      <item>
-      <widget class="QComboBox" name="comboBox">
-       <item>
-        <property name="text">
-         <string>Default Camera</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Non-default camera 1</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Non-default camera 2</string>
-        </property>
-       </item>
-      </widget>
+      <property name="text">
+       <string>Non-default camera 1</string>
+      </property>
      </item>
      <item>
-      <widget class="Line" name="line">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
+      <property name="text">
+       <string>Non-default camera 2</string>
+      </property>
      </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_2">
-       <property name="text">
-        <string>Calibrate Camera</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    </widget>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="text">
+      <string>Calibrate Camera</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -85,7 +84,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>427</width>
+     <width>402</width>
      <height>20</height>
     </rect>
    </property>
