@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>402</width>
-    <height>365</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,60 +23,80 @@
       <height>381</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-image: url(:/new/prefix1/brontossaurus/brontossauro3.jpg);</string>
     </property>
    </widget>
-   <widget class="QSplitter" name="splitter">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>100</y>
-      <width>341</width>
-      <height>141</height>
+      <y>130</y>
+      <width>391</width>
+      <height>161</height>
      </rect>
     </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
-    </property>
-    <widget class="QLabel" name="label">
-     <property name="font">
-      <font>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>  Select your camera:</string>
-     </property>
-    </widget>
-    <widget class="QComboBox" name="comboBox">
-     <property name="editable">
-      <bool>false</bool>
-     </property>
-     <property name="currentText">
-      <string>Default Camera</string>
-     </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <property name="text">
-       <string>Default Camera</string>
-      </property>
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <pointsize>18</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>  Select your camera:</string>
+       </property>
+      </widget>
      </item>
      <item>
-      <property name="text">
-       <string>Non-default camera 1</string>
-      </property>
+      <widget class="QComboBox" name="comboBox">
+       <property name="font">
+        <font>
+         <pointsize>18</pointsize>
+        </font>
+       </property>
+       <property name="editable">
+        <bool>false</bool>
+       </property>
+       <property name="currentText">
+        <string>Default Camera</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Default Camera</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Non-default camera 1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Non-default camera 2</string>
+        </property>
+       </item>
+      </widget>
      </item>
      <item>
-      <property name="text">
-       <string>Non-default camera 2</string>
-      </property>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="font">
+        <font>
+         <pointsize>18</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Calibrate Camera</string>
+       </property>
+      </widget>
      </item>
-    </widget>
-    <widget class="QPushButton" name="pushButton_2">
-     <property name="text">
-      <string>Calibrate Camera</string>
-     </property>
-    </widget>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -84,7 +104,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>402</width>
+     <width>800</width>
      <height>20</height>
     </rect>
    </property>
