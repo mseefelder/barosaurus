@@ -35,7 +35,7 @@ void lineMarkerControls::on_bottomSelect_clicked()
 
 void lineMarkerControls::on_doneButton_clicked()
 {
-    //cv::destroyWindow("Line marker");//fix later: this piece of code depends on the lineMarkerName string on LineMarker class
+    cv::destroyWindow("Line marker");//fix later: this piece of code depends on the lineMarkerName string on LineMarker class
     target->stopMarking();
     QMessageBox msgBox;
     msgBox.setText("Line marking stopped. To close linemarking, press any key with the linemarking window selected.");
