@@ -150,6 +150,7 @@ lineSet LineMarker::displayCamera(string windowName){
     lineMarkerControls  *controlBox= new lineMarkerControls;
     controlBox->setTarget(this);
     controlBox->show();
-
+    controlBox->raise();
+    controlBox->activateWindow();
     return markLines();
 }
