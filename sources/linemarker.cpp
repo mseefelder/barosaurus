@@ -37,7 +37,6 @@ bool isMarking = false; //is marking lines?
 LineMarker::LineMarker(int camIndex)
 {
     cameraIndexh = camIndex;
-    cout <<"djfaoai"<<camIndex<<"faedijafolafio";
 }
 
 void LineMarker::chooseLine(bool top){
@@ -136,7 +135,7 @@ lineSet LineMarker::markLines(){
     // Wait until user press some key
     waitKey(0);
 
-    cout<<"Top line: "<<markedLines.set[0].p1.y<<" Bottom line: "<<markedLines.set[1].p1.y<<endl; //debug purpose only
+    //cout<<"Top line: "<<markedLines.set[0].p1.y<<" Bottom line: "<<markedLines.set[1].p1.y<<endl; //debug purpose only
     destroyWindow(lineMarkerName);
     return markedLines; // this index will be used to save different lineSets on the fiveLineSets calibration variable
 

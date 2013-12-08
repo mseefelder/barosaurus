@@ -62,7 +62,7 @@ void MeasuringWindow::on_doubleSpinBox_valueChanged(double arg1)
 
 void MeasuringWindow::on_pushButton_2_clicked()
 {
-    result = myCamera.calculate_RealHeight(workingSet.dc, workingSet);
+    result = fabs(myCamera.calculate_RealHeight(workingSet.dc, workingSet));
     QString resultText = QString::number(result);
     ui->measuredValue->setText(resultText);
 }

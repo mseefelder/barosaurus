@@ -157,7 +157,6 @@ void JaneladeCalibragem::on_pushButton_6_clicked()
 void JaneladeCalibragem::on_pushButton_clicked()
 {
     if(calibSet.isFull()){
-        cout << cameraIndexj ;
         MeasuringWindow  *measuringwindow= new MeasuringWindow(cameraIndexj);
         measuringwindow->show();
         measuringwindow->setLineMarker(linemarker);
