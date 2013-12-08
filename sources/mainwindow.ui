@@ -38,19 +38,42 @@
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QLabel" name="label">
        <property name="text">
-        <string>Calibrate Camera</string>
+        <string>               Select your camera:</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
-       <property name="enabled">
-        <bool>false</bool>
+      <widget class="QComboBox" name="comboBox">
+       <item>
+        <property name="text">
+         <string>Default Camera</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Non-default camera 1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Non-default camera 2</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="Line" name="line">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
        </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_2">
        <property name="text">
-        <string>Set Camera</string>
+        <string>Calibrate Camera</string>
        </property>
       </widget>
      </item>

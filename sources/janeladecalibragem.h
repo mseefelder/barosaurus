@@ -13,7 +13,7 @@ class JaneladeCalibragem : public QWidget
     Q_OBJECT
 
 public:
-    explicit JaneladeCalibragem(QWidget *parent = 0);
+    explicit JaneladeCalibragem(int camIndex, QWidget *parent = 0);
     ~JaneladeCalibragem();
 
 private slots:

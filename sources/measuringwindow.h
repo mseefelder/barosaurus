@@ -18,7 +18,7 @@ class MeasuringWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MeasuringWindow(QWidget *parent = 0);
+    explicit MeasuringWindow(int camIndex, QWidget *parent = 0);
     ~MeasuringWindow();
     void setLineMarker(LineMarker mytarget);
     void setCamera(Camera thisCamera);

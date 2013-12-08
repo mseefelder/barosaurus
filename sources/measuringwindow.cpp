@@ -8,18 +8,24 @@
 #include "linemarkercontrols.h"
 #include <QString>
 #include <QClipboard>
+#include <iostream>
+#include <string>
 
-LineMarker measurelinemarker;
+int cameraIndex2;
+LineMarker measurelinemarker(cameraIndex2);
 lineSet workingSet;
 Camera myCamera;
 
+
 double result;
 
-MeasuringWindow::MeasuringWindow(QWidget *parent) :
+MeasuringWindow::MeasuringWindow(int camIndex, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MeasuringWindow)
 {
     ui->setupUi(this);
+    cameraIndex2 = camIndex;
+    cout <<"faijafij"<< cameraIndex2<<"akfjl";
 }
 
 MeasuringWindow::~MeasuringWindow()

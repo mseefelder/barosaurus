@@ -7,7 +7,7 @@ void onMouse(int event, int x, int y, int flags, void* userdata);
 class LineMarker
 { 
 public:
-    LineMarker();
+    LineMarker(int camIndex);
     lineSet markLines();
     lineSet displayCamera(string windowName);
     void chooseLine(bool top);

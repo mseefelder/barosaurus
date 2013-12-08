@@ -30,11 +30,13 @@ using namespace cv;
 //--------------------
 */
 
+int cameraIndex = 0;
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);
+   ui->setupUi(this);
    scn = new QGraphicsScene;
    QString filename = "brontossauro3.jpg";
    img.load(filename);
@@ -50,10 +52,16 @@ MainWindow::~MainWindow()
 //Open calibration window
 void MainWindow::on_pushButton_2_clicked()
 {
-    JaneladeCalibragem  *janeladecalibragem= new JaneladeCalibragem;
+    JaneladeCalibragem  *janeladecalibragem= new JaneladeCalibragem(cameraIndex);
     janeladecalibragem->show();
     this->close();
 }
+
+void MainWindow::on_comboBox_currentIndexChanged(int index)
+{
+    cameraIndex = index;
+}
+
 
 //void onMouse(int event, int x, int y, int flags, void* userdata)
 //{
@@ -123,4 +131,5 @@ void MainWindow::on_pushButton_2_clicked()
 //    cout<<"Linha inferior: "<<markedLines.set[0].p1.y<<" Linha superior: "<<markedLines.set[1].p1.y<<endl;
 //    destroyWindow(lineMarkerName);
 //}
+
 

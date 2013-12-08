@@ -7,17 +7,23 @@
 #include <QMessageBox>
 #include "linemarker.h"
 #include "linemarkercontrols.h"
+#include <iostream>
+#include <string>
 
 using namespace std;
 using namespace cv;
 
+int cameraIndexj;
 fiveLineSets calibSet;
-LineMarker linemarker;
+LineMarker linemarker(0);
 
-JaneladeCalibragem::JaneladeCalibragem(QWidget *parent) :
+JaneladeCalibragem::JaneladeCalibragem(int camIndex, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::JaneladeCalibragem)
 {
+    cameraIndexj = camIndex;
+    LineMarker lm(camIndex);
+    linemarker = lm;
     ui->setupUi(this);
 }
 
@@ -151,7 +157,8 @@ void JaneladeCalibragem::on_pushButton_6_clicked()
 void JaneladeCalibragem::on_pushButton_clicked()
 {
     if(calibSet.isFull()){
-        MeasuringWindow  *measuringwindow= new MeasuringWindow;
+        cout << cameraIndexj ;
+        MeasuringWindow  *measuringwindow= new MeasuringWindow(cameraIndexj);
         measuringwindow->show();
         measuringwindow->setLineMarker(linemarker);
         Camera thisCamera;

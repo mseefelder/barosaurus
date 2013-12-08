@@ -7,6 +7,10 @@
 #include <highgui.h>
 #include "camera.h"
 #include "linemarkercontrols.h"
+#include <iostream>
+#include <string>
+
+int cameraIndexh;
 
 //to be used during measuring
 lineSet markedLines;
@@ -18,14 +22,22 @@ Mat img, workingImage;
 string draft = "draft.jpg";
 
 //While the program is running, the webcam is always on
-cv::VideoCapture cap(0);
 
-//Bools to control if user is still marking lines and what line the user is marking
+cv::VideoCapture capt(2);
+cv::VideoCapture capo(1);
+cv::VideoCapture capz(0);
+
+
+
+//Bools to control if user is still
+//marking lines and what line the user is marking
 bool wichLine = false; //false=bottom, true=top
 bool isMarking = false; //is marking lines?
 
-LineMarker::LineMarker()
+LineMarker::LineMarker(int camIndex)
 {
+    cameraIndexh = camIndex;
+    cout <<"djfaoai"<<camIndex<<"faedijafolafio";
 }
 
 void LineMarker::chooseLine(bool top){
@@ -132,6 +144,18 @@ lineSet LineMarker::markLines(){
 
 //Open camera to take picture by pressing any key. Picture is used for line marking
 lineSet LineMarker::displayCamera(string windowName){
+    VideoCapture cap;
+    if (cameraIndexh == 0){
+        cap = capz;
+    }
+    else if(cameraIndexh == 1)
+    {
+        cap = capo;
+    }
+    else
+    {
+        cap = capt;
+    }
     namedWindow(windowName);
     Mat frame;
 
