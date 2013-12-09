@@ -20,6 +20,7 @@ string lineMarkerName = "Line marker";
 
 Mat img, workingImage;
 string draft = "draft.jpg";
+bool isMarkerNoob = true;
 
 //While the program is running, the webcam is always on
 
@@ -78,21 +79,21 @@ void onMouse(int event, int x, int y, int flags, void* userdata)
     else if  ( event == EVENT_RBUTTONDOWN )
     {
         //sets bottom line
-        img = imread(draft);
-        aLine templine(0, y, img.size().width, y);
-        templine.drawaLine(img, Scalar(0, 0, 255));
-        imshow(lineMarkerName, img);
-        markedLines.setLine(0,templine);
+        //img = imread(draft);
+        //aLine templine(0, y, img.size().width, y);
+        //templine.drawaLine(img, Scalar(0, 0, 255));
+        //imshow(lineMarkerName, img);
+        //markedLines.setLine(0,templine);
     }
     else if  ( event == EVENT_MBUTTONDOWN )
     {
         //take another picture
         //destroyWindow(lineMarkerName);
-        img = imread(draft);
-        aLine templine(0, y, img.size().width, y);
-        templine.drawaLine(img, Scalar(0, 0, 255));
-        imshow(lineMarkerName, img);
-        markedLines.setLine(1,templine);
+        //img = imread(draft);
+        //aLine templine(0, y, img.size().width, y);
+        //templine.drawaLine(img, Scalar(0, 0, 255));
+        //imshow(lineMarkerName, img);
+        //markedLines.setLine(1,templine);
     }
     else if ( event == EVENT_MOUSEMOVE )
     {
@@ -156,7 +157,7 @@ lineSet LineMarker::displayCamera(string windowName){
         cap = capt;
     }
     namedWindow(windowName);
-    Mat frame;
+    Mat frame, messageFrame;
 
     do{
         cap >> frame;
@@ -165,6 +166,25 @@ lineSet LineMarker::displayCamera(string windowName){
 
     cap >> frame;
 
+    messageFrame = frame;
+/*
+    int fontFace = FONT_HERSHEY_TRIPLEX;
+    //int fontFace = SANS_SERIF;
+    double fontScale = 0.5;
+    int thickness = 1;
+    cv::Point textOrg(10, 50);
+    string text0 = "Control wich line you're marking on the 'ToolBox'";
+    string text1 = "Blue line = Top Line";
+    string text2 = "Green line = Bottom Line.";
+    string text3 = "Left mouse button to mark a line.";
+    cv::putText(messageFrame, text0, textOrg, fontFace, fontScale, Scalar::all(255), thickness,8);
+    cv::Point textOrg1(20, 70);
+    cv::putText(messageFrame, text1, textOrg1, fontFace, fontScale, Scalar::all(255), thickness,8);
+    cv::Point textOrg2(20, 90);
+    cv::putText(messageFrame, text2, textOrg2, fontFace, fontScale, Scalar::all(255), thickness,8);
+    cv::Point textOrg3(20, 110);
+    cv::putText(messageFrame, text3, textOrg3, fontFace, fontScale, Scalar::all(255), thickness,8);
+*/
     imwrite(draft, frame); //saves image on disk
 
     destroyWindow(windowName);
