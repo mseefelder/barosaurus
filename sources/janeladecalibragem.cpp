@@ -16,7 +16,7 @@ using namespace cv;
 int cameraIndexj;
 fiveLineSets calibSet;
 LineMarker linemarker(0);
-
+bool isNoob = true;
 
 JaneladeCalibragem::JaneladeCalibragem(int camIndex, QWidget *parent) :
     QWidget(parent),
@@ -115,6 +115,14 @@ void JaneladeCalibragem::on_pushButton_2_clicked()
     //lineMarkerControls  *controlBox= new lineMarkerControls;
     //controlBox->setTarget(&linemarker);
     //controlBox->show();
+    if(isNoob){
+        QMessageBox noobBox;
+        noobBox.setText("1.Press any key to take a picture;"
+                "2.Set bottom and top lines;"
+                "3.When it's all ready, click 'Done'");
+        noobBox.exec();
+        isNoob = false;
+    }
     lineSet temporary = linemarker.displayCamera("Calibration photo 1");
     calibSet.setSet(0, temporary);
 }
@@ -124,6 +132,14 @@ void JaneladeCalibragem::on_pushButton_3_clicked()
     //lineMarkerControls  *controlBox= new lineMarkerControls;
     //controlBox->setTarget(&linemarker);
     //controlBox->show();
+    if(isNoob){
+        QMessageBox noobBox;
+        noobBox.setText("1.Press any key to take a picture;"
+                        "2.Set bottom and top lines;"
+                        "3.When it's all ready, click 'Done'");
+        noobBox.exec();
+        isNoob = false;
+    }
     lineSet temporary = linemarker.displayCamera("Calibration photo 2");
     calibSet.setSet(1, temporary);
 }
@@ -133,6 +149,14 @@ void JaneladeCalibragem::on_pushButton_5_clicked()
     //lineMarkerControls  *controlBox= new lineMarkerControls;
     //controlBox->setTarget(&linemarker);
     //controlBox->show();
+    if(isNoob){
+        QMessageBox noobBox;
+        noobBox.setText("1.Press any key to take a picture;"
+                        "2.Set bottom and top lines;"
+                        "3.When it's all ready, click 'Done'");
+        noobBox.exec();
+        isNoob = false;
+    }
     lineSet temporary = linemarker.displayCamera("Calibration photo 3");
     calibSet.setSet(2, temporary);
 }
@@ -142,6 +166,14 @@ void JaneladeCalibragem::on_pushButton_4_clicked()
     //lineMarkerControls  *controlBox= new lineMarkerControls;
     //controlBox->setTarget(&linemarker);
     //controlBox->show();
+    if(isNoob){
+        QMessageBox noobBox;
+        noobBox.setText("1.Press any key to take a picture;"
+                        "2.Set bottom and top lines;"
+                        "3.When it's all ready, click 'Done'");
+        noobBox.exec();
+        isNoob = false;
+    }
     lineSet temporary = linemarker.displayCamera("Calibration photo 4");
     calibSet.setSet(3, temporary);
 }
@@ -151,6 +183,14 @@ void JaneladeCalibragem::on_pushButton_6_clicked()
     //lineMarkerControls  *controlBox= new lineMarkerControls;
     //controlBox->setTarget(&linemarker);
     //controlBox->show();
+    if(isNoob){
+        QMessageBox noobBox;
+        noobBox.setText("1.Press any key to take a picture;"
+                        "2.Set bottom and top lines;"
+                        "3.When it's all ready, click 'Done'");
+        noobBox.exec();
+        isNoob = false;
+    }
     lineSet temporary = linemarker.displayCamera("Calibration photo 5");
     calibSet.setSet(4, temporary);
 }
