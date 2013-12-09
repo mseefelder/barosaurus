@@ -17,6 +17,7 @@ int cameraIndexj;
 fiveLineSets calibSet;
 LineMarker linemarker(0);
 
+
 JaneladeCalibragem::JaneladeCalibragem(int camIndex, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::JaneladeCalibragem)
@@ -108,6 +109,7 @@ void JaneladeCalibragem::on_spinBox_5_valueChanged(double arg1)
 
 
 //-----------CALIBRATION PHOTOS----------------------------------------------------------
+
 void JaneladeCalibragem::on_pushButton_2_clicked()
 {
     //lineMarkerControls  *controlBox= new lineMarkerControls;

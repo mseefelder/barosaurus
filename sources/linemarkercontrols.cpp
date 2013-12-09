@@ -40,5 +40,7 @@ void lineMarkerControls::on_doneButton_clicked()
     QMessageBox msgBox;
     msgBox.setText("Line marking stopped. To close linemarking, press any key with the linemarking window selected.");
     msgBox.exec();
+    cv::destroyWindow("Line marker");//fix later: this piece of code depends on the lineMarkerName string on LineMarker class
+        target->stopMarking();
     this->close();
 }
